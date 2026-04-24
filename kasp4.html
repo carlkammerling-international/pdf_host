@@ -1,0 +1,30 @@
+<div id="pdf-viewer" style="height: 100vh"></div>
+ 
+<script type="module">
+  import EmbedPDF from 'https://cdn.jsdelivr.net/npm/@embedpdf/snippet@2/dist/embedpdf.js';
+ 
+  //embedpdf container
+  EmbedPDF.init({
+    type: 'container',
+    target: document.getElementById('pdf-viewer'),
+    src: 'kasp4.pdf',
+    theme: {
+    preference: 'system', //force dark mode because light mode is garbage
+      dark: {
+      accent: {
+        primary: '#FCEE00',        // C.K yellow, of course!
+        primaryHover: '#b59100',   //hover state - a darker yellow
+      background: {
+        app: '#202020',         // The main background behind the document - dark grey
+        surface: '#1a1a1a',     // Toolbars, sidebars, panels
+        surfaceAlt: '#151515',  // Secondary toolbars
+        elevated: '#2a2a2a',    // Dropdowns, popups
+        overlay: 'rgba(0,0,0,0.7)',     // Modal backdrops (usually transparent rgba)
+        input: '#333333',       // Text inputs and checkboxes
+            }  
+  }},
+
+    }
+  }
+  );
+</script>
